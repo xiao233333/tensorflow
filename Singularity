@@ -7,8 +7,7 @@ From: tensorflow/tensorflow:latest-gpu
   export SHELL
 
 %setup
-  # runs on host
-  # the path to the image is $SINGULARITY_ROOTFS
+  # runs on host - the path to the image is $SINGULARITY_ROOTFS
 
 %post
   # post-setup script
