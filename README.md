@@ -29,7 +29,7 @@ singularity pull --name tensorflow shub://marcc-hpc/tensorflow
 # redefine SINGULARITY_HOME to mount current working directory to base $HOME
 export SINGULARITY_HOME=$PWD:/home/$USER 
 
-singularity shell -B $CUDA_DRIVER:/.singularity.d/libs/ ./tensorflow.simg
+singularity exec -B $CUDA_DRIVER:/.singularity.d/libs/ ./tensorflow.simg python softmax_regression.py
 
 ```
 
