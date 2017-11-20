@@ -1,6 +1,8 @@
 # tensorflow
 
-MARCC Installed Drivers at testing time were: K80 with 384.81 Driver.
+TensorFlow Version: 1.4.0
+
+MARCC NVidia GPU and installed drivers at testing time were: K80 & 384.81.
 
 Here's how to run it on MARCC systems:
 
