@@ -1,4 +1,4 @@
-# tensorflow
+# TensorFlow
 
 TensorFlow Version: 1.4.0
 
@@ -19,6 +19,7 @@ Work with this job script `tensorflow_job.sh`:
 module load cuda/9.0           # also locates matching $CUDA_DRIVER location
 module load singularity/2.4
 
+# see this excellent reference: https://github.com/dsindex/tensorflow
 wget -N https://raw.githubusercontent.com/dsindex/tensorflow/master/train_softmax.txt
 wget -N https://raw.githubusercontent.com/dsindex/tensorflow/master/softmax_regression.py
 wget -N http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz
@@ -29,10 +30,9 @@ wget -N http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
 singularity pull --name tensorflow shub://marcc-hpc/tensorflow
 
 # redefine SINGULARITY_HOME to mount current working directory to base $HOME
-export SINGULARITY_HOME=$PWD:/home/$USER 
+export SINGULARITY_HOME=$PWD:/home/$USER
 
-singularity exec -B $CUDA_DRIVER:/.singularity.d/libs/ ./tensorflow.simg python softmax_regression.py
-
+singularity exec --nv ./tensorflow python softmax_regression.py
 ```
 
 Submit job: `sbatch tensorflow_job.sh`
