@@ -19,6 +19,7 @@ Work with this job script `tensorflow_job.sh`:
 module load cuda/9.0           # also locates matching $CUDA_DRIVER location
 module load singularity/2.4
 
+# see this excellent reference: https://github.com/dsindex/tensorflow
 wget -N https://raw.githubusercontent.com/dsindex/tensorflow/master/train_softmax.txt
 wget -N https://raw.githubusercontent.com/dsindex/tensorflow/master/softmax_regression.py
 wget -N http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz
