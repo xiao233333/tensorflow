@@ -4,9 +4,7 @@ TensorFlow Version: 1.4.0
 
 MARCC NVidia GPU and installed drivers at testing time were: K80 & 384.81.
 
-Here's how to run it on MARCC systems:
-
-Work with this job script `tensorflow_job.sh`:
+Here is an example job script `tensorflow_job.sh` to run on MARCC systems:
 
 ```
 #!/bin/bash
