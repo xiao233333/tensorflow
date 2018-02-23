@@ -1,6 +1,6 @@
 # TensorFlow
 
-TensorFlow Version: 1.5.0-gpu
+TensorFlow Version: 1.6.0-rc1-gpu
 
 MARCC NVidia GPU and installed drivers at testing time were: K80 & 384.81.
 
@@ -29,7 +29,7 @@ wget -N http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz
 wget -N http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz
 wget -N http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
 
-singularity pull --name tensorflow shub://marcc-hpc/tensorflow
+singularity pull --name tensorflow shub://marcc-hpc/tensorflow:1.6.0-rc1-gpu
 
 # redefine SINGULARITY_HOME to mount current working directory to base $HOME
 export SINGULARITY_HOME=$PWD:/home/$USER
@@ -37,5 +37,5 @@ export SINGULARITY_HOME=$PWD:/home/$USER
 singularity exec --nv ./tensorflow.simg python softmax_regression.py
 ```
 
-Download this file: `wget https://raw.githubusercontent.com/marcc-hpc/tensorflow/1.5.0-gpu/tensorflow_job.sh`
+Download this file: `wget https://raw.githubusercontent.com/marcc-hpc/tensorflow/1.6.0-rc1-gpu/tensorflow_job.sh`
 Submit job: `sbatch tensorflow_job.sh`
