@@ -5,7 +5,7 @@
 #SBATCH --gres=gpu:1
 #SBATCH -t 1:0:0
 
-module load cuda/9.0           # also locates matching $CUDA_DRIVER location
+module load cuda/9.0 
 module load singularity/2.4
 
 # this works on MARCC, work on Lustre /scratch
@@ -25,4 +25,4 @@ singularity pull --name tensorflow shub://marcc-hpc/tensorflow
 # redefine SINGULARITY_HOME to mount current working directory to base $HOME
 export SINGULARITY_HOME=$PWD:/home/$USER
 
-singularity exec --nv ./tensorflow python softmax_regression.py
+singularity exec --nv ./tensorflow.simg python softmax_regression.py
