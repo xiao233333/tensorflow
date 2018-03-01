@@ -1,6 +1,6 @@
 # TensorFlow
 
-TensorFlow Version: 1.6.0-py3-gpu
+TensorFlow Version: 1.6.0-gpu-py3
 
 MARCC NVidia GPU and installed drivers at testing time were: K80 & 384.81.
 
@@ -23,7 +23,6 @@ cd /scratch/users/$USER/tensorflow_run
 
 # see this excellent reference: https://github.com/dsindex/tensorflow
 wget -N https://raw.githubusercontent.com/dsindex/tensorflow/master/train_softmax.txt
-wget -N https://raw.githubusercontent.com/dsindex/tensorflow/master/softmax_regression.py
 wget -N http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz
 wget -N http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz
 wget -N http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz
