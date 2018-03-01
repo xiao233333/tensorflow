@@ -1,6 +1,6 @@
 # TensorFlow
 
-TensorFlow Version: 1.6.0-gpu-py3
+TensorFlow Version: 1.6.0-devel-gpu-py3
 
 MARCC NVidia GPU and installed drivers at testing time were: K80 & 384.81.
 
@@ -36,5 +36,5 @@ export SINGULARITY_HOME=$PWD:/home/$USER
 singularity exec --nv ./tensorflow.simg python softmax_regression.py
 ```
 
-Download this file: `wget https://raw.githubusercontent.com/marcc-hpc/tensorflow/1.6.0-gpu-py3/tensorflow_job.sh`
+Download this file: `wget https://raw.githubusercontent.com/marcc-hpc/tensorflow/1.6.0-devel-gpu-py3/tensorflow_job.sh`
 Submit job: `sbatch tensorflow_job.sh`
