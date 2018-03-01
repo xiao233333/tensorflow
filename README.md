@@ -33,7 +33,7 @@ singularity pull --name tensorflow shub://marcc-hpc/tensorflow:1.6.0-devel-gpu-p
 # redefine SINGULARITY_HOME to mount current working directory to base $HOME
 export SINGULARITY_HOME=$PWD:/home/$USER
 
-singularity exec --nv ./tensorflow.simg python softmax_regression.py
+singularity exec --nv ./tensorflow.simg python3 softmax_regression.py
 ```
 
 Download this file: `wget https://raw.githubusercontent.com/marcc-hpc/tensorflow/1.6.0-devel-gpu-py3/tensorflow_job.sh`
