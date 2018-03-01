@@ -1,6 +1,6 @@
 # TensorFlow
 
-TensorFlow Version: 1.5.0-gpu
+TensorFlow Version: 1.6.0-py3-gpu
 
 MARCC NVidia GPU and installed drivers at testing time were: K80 & 384.81.
 
