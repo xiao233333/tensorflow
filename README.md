@@ -29,7 +29,7 @@ wget -N http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz
 wget -N http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz
 wget -N http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
 
-singularity pull --name tensorflow shub://marcc-hpc/tensorflow
+singularity pull --name tensorflow.simg shub://marcc-hpc/tensorflow
 
 # redefine SINGULARITY_HOME to mount current working directory to base $HOME
 export SINGULARITY_HOME=$PWD:/home/$USER
