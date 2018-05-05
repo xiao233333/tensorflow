@@ -2,7 +2,7 @@
 
 [![https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg](https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg)](https://singularity-hub.org/collections/260)
 
-TensorFlow Version: 1.7.0-gpu
+TensorFlow Version: 1.8.0-gpu
 
 MARCC NVidia GPU and installed drivers at testing time were: K80 & 384.81.
 
@@ -39,5 +39,5 @@ export SINGULARITY_HOME=$PWD:/home/$USER
 singularity exec --nv ./tensorflow.simg python softmax_regression.py
 ```
 
-Download this file: `wget https://raw.githubusercontent.com/marcc-hpc/tensorflow/1.7.0-gpu/tensorflow_job.sh`
+Download this file: `wget https://raw.githubusercontent.com/marcc-hpc/tensorflow/1.8.0-gpu/tensorflow_job.sh`
 Submit job: `sbatch tensorflow_job.sh`
