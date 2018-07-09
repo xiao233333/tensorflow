@@ -24,6 +24,16 @@ From: tensorflow/tensorflow:1.8.0-gpu
   # default mount paths
   mkdir /scratch /data 
 
+  # additional packages
+  apt-get update
+  apt-get install -y python-tk
+  apt-get install -y libsm6 libxext6
+  pip install selenium
+  pip install moviepy
+  pip install lmdb
+  pip install opencv-contrib-python
+  pip install cryptography
+
 %runscript
   # executes with the singularity run command
   # delete this section to use existing docker ENTRYPOINT command
