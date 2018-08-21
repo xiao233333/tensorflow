@@ -2,7 +2,7 @@
 
 [![https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg](https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg)](https://singularity-hub.org/collections/260)
 
-TensorFlow Version: 1.8.0-gpu
+TensorFlow Version: 1.10.0-gpu
 
 MARCC NVidia GPU and installed drivers at testing time were: K80 & 384.81.
 
@@ -16,8 +16,8 @@ Here is an example job script `tensorflow_job.sh` to run on MARCC systems:
 #SBATCH --gres=gpu:1
 #SBATCH -t 1:0:0
 
-module load cuda/9.0           # also locates matching $CUDA_DRIVER location
-module load singularity/2.4
+module load cuda
+module load singularity
 
 # this works on MARCC, work on Lustre /scratch
 mkdir -p /scratch/users/$USER/tensorflow_run
@@ -39,5 +39,5 @@ export SINGULARITY_HOME=$PWD:/home/$USER
 singularity exec --nv ./tensorflow.simg python softmax_regression.py
 ```
 
-Download this file: `wget https://raw.githubusercontent.com/marcc-hpc/tensorflow/1.8.0-gpu/tensorflow_job.sh`
+Download this file: `wget https://raw.githubusercontent.com/marcc-hpc/tensorflow/1.10.0-gpu/tensorflow_job.sh`
 Submit job: `sbatch tensorflow_job.sh`
