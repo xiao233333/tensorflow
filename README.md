@@ -70,3 +70,6 @@ wget -N http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
 
 python softmax_regression.py
 ```
+
+Download this file: `wget https://raw.githubusercontent.com/marcc-hpc/tensorflow/1.10.1-gpu/tensorflow_job_on_marcc.sh`
+Submit job: `sbatch tensorflow_job_on_marcc.sh`
