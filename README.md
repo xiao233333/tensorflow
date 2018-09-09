@@ -40,7 +40,7 @@ export SINGULARITY_HOME=$PWD:/home/$USER
 singularity exec --nv ./tensorflow.simg python softmax_regression.py
 ```
 
-Download this file: `wget https://raw.githubusercontent.com/marcc-hpc/tensorflow/1.10.1-gpu/tensorflow_job.sh`
+Download this file: `wget https://raw.githubusercontent.com/marcc-hpc/tensorflow/1.10.1-gpu-py3/tensorflow_job.sh`
 Submit job: `sbatch tensorflow_job.sh`
 
 ```
@@ -71,6 +71,6 @@ wget -N http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
 python3 softmax_regression.py
 ```
 
-Download this file: `wget https://raw.githubusercontent.com/marcc-hpc/tensorflow/1.10.1-gpu/tensorflow_job_on_marcc.sh`
+Download this file: `wget https://raw.githubusercontent.com/marcc-hpc/tensorflow/1.10.1-gpu-py3/tensorflow_job_on_marcc.sh`
 
 Submit job: `sbatch tensorflow_job_on_marcc.sh`
