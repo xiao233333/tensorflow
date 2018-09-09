@@ -5,8 +5,8 @@
 #SBATCH --gres=gpu:1
 #SBATCH -t 1:0:0
 
-module load cuda/9.0 
-module load singularity/2.4
+module load cuda
+module load singularity
 
 # this works on MARCC, work on Lustre /scratch
 mkdir -p /scratch/users/$USER/tensorflow_run
