@@ -72,4 +72,5 @@ python softmax_regression.py
 ```
 
 Download this file: `wget https://raw.githubusercontent.com/marcc-hpc/tensorflow/1.10.1-gpu/tensorflow_job_on_marcc.sh`
+
 Submit job: `sbatch tensorflow_job_on_marcc.sh`
