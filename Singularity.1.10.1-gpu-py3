@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: tensorflow/tensorflow:1.10.1-gpu
+From: tensorflow/tensorflow:1.10.1-gpu-py3
 
 %environment
   # use bash as default shell
@@ -20,9 +20,6 @@ From: tensorflow/tensorflow:1.10.1-gpu
 
   # make environment file executable
   chmod +x /environment
-
-  # default mount paths
-  mkdir /scratch /data 
 
   # additional packages
   apt-get update
