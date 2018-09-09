@@ -68,6 +68,6 @@ p = sess.run(y, feed_dict={X:[[1,5,5]]}) # 0 1 0 -> B, index 1
 print(p, sess.run(tf.argmax(p, 1)))
 
 p = sess.run(y, feed_dict={X:[[1,2,1], [1,5,5]]})
-print(p, sess.run(tf.arg_max(p, 1)))
+print(p, sess.run(tf.argmax(p, 1)))
 
 sess.close()
