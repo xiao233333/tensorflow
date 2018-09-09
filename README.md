@@ -14,6 +14,7 @@ Here is an example job script `tensorflow_job.sh` to run on MARCC or similar HPC
 #SBATCH -n 6
 #SBATCH -p gpu
 #SBATCH --gres=gpu:1
+#SBATCH -o tensorflow-%j.out
 #SBATCH -t 1:0:0
 
 module load cuda
@@ -50,6 +51,7 @@ If you have an account on MARCC, then you may be able to use the following `tens
 #SBATCH -n 6
 #SBATCH -p gpu
 #SBATCH --gres=gpu:1
+#SBATCH -o tensorflow-%j.out
 #SBATCH -t 1:0:0
 
 module load cuda

@@ -3,6 +3,7 @@
 #SBATCH -n 6
 #SBATCH -p gpu
 #SBATCH --gres=gpu:1
+#SBATCH -o tensorflow-%j.out
 #SBATCH -t 1:0:0
 
 module load cuda
