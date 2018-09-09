@@ -1,13 +1,14 @@
 #!/bin/bash
 #SBATCH -N 1
 #SBATCH -n 6
-#SBATCH -p gpu
+#SBATCH -p gpuk80
 #SBATCH --gres=gpu:1
 #SBATCH -o tensorflow-%j.out
 #SBATCH -t 1:0:0
 
 module load cuda
 module load singularity
+module load tensorflow/1.10.1-gpu-py3
 
 # this works on MARCC, work on Lustre /scratch
 mkdir -p /scratch/users/$USER/tensorflow_run_py3
@@ -21,9 +22,4 @@ wget -N http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz
 wget -N http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz
 wget -N http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
 
-singularity pull --name tensorflow.simg shub://marcc-hpc/tensorflow:1.10.1-gpu-py3
-
-# redefine SINGULARITY_HOME to mount current working directory to base $HOME
-export SINGULARITY_HOME=$PWD:/home/$USER
-
-singularity exec --nv ./tensorflow.simg python softmax_regression.py
+python3 softmax_regression.py

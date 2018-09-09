@@ -12,16 +12,17 @@ Here is an example job script `tensorflow_job.sh` to run on MARCC systems:
 #!/bin/bash
 #SBATCH -N 1
 #SBATCH -n 6
-#SBATCH -p gpu
+#SBATCH -p gpuk80
 #SBATCH --gres=gpu:1
+#SBATCH -o tensorflow-%j.out
 #SBATCH -t 1:0:0
 
 module load cuda
 module load singularity
 
 # this works on MARCC, work on Lustre /scratch
-mkdir -p /scratch/users/$USER/tensorflow_run
-cd /scratch/users/$USER/tensorflow_run
+mkdir -p /scratch/users/$USER/tensorflow_run_py3
+cd /scratch/users/$USER/tensorflow_run_py3
 
 # see this excellent reference: https://github.com/dsindex/tensorflow
 wget -N https://raw.githubusercontent.com/dsindex/tensorflow/master/train_softmax.txt
@@ -41,3 +42,35 @@ singularity exec --nv ./tensorflow.simg python softmax_regression.py
 
 Download this file: `wget https://raw.githubusercontent.com/marcc-hpc/tensorflow/1.10.1-gpu/tensorflow_job.sh`
 Submit job: `sbatch tensorflow_job.sh`
+
+```
+#!/bin/bash
+#SBATCH -N 1
+#SBATCH -n 6
+#SBATCH -p gpuk80
+#SBATCH --gres=gpu:1
+#SBATCH -o tensorflow-%j.out
+#SBATCH -t 1:0:0
+
+module load cuda
+module load singularity
+module load tensorflow/1.10.1-gpu-py3
+
+# this works on MARCC, work on Lustre /scratch
+mkdir -p /scratch/users/$USER/tensorflow_run_py3
+cd /scratch/users/$USER/tensorflow_run_py3
+
+# see this excellent reference: https://github.com/dsindex/tensorflow
+wget -N https://raw.githubusercontent.com/dsindex/tensorflow/master/train_softmax.txt
+wget -N https://raw.githubusercontent.com/marcc-hpc/tensorflow/1.10.1-gpu-py3/softmax_regression.py
+wget -N http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz
+wget -N http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz
+wget -N http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz
+wget -N http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
+
+python3 softmax_regression.py
+```
+
+Download this file: `wget https://raw.githubusercontent.com/marcc-hpc/tensorflow/1.10.1-gpu/tensorflow_job_on_marcc.sh`
+
+Submit job: `sbatch tensorflow_job_on_marcc.sh`
